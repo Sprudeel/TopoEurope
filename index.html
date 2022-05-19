@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<!-- 
+    Part of the Topo Asia Learner!;
+
+    Made by @Sprudeel (GitHub);
+
+    Repository: https://github.com/Sprudeel/TopoAsia;
+
+    March 2022, Switzerland;
+-->
+
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Google Imports -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;500;900&display=swap" rel="stylesheet">
+
+    <!-- Meta -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Icon on Tab Bar -->
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+
+
+    <!-- Title -->
+    <title>Topo Asien</title>
+
+    <!-- CSS Stylesheet Local -->
+    <link rel="stylesheet" href="style.css">
+
+
+    
+</head>
+<body id="20">
+
+    <!-- Head Bar -->
+    <div class="title">
+
+        <!-- Angaben ohne Gewähr -->
+        <div class="version">Angaben ohne Gewähr</div>
+
+        <!-- Name of Game -->
+        <div class="name">Topo Asien</div>
+
+        <!-- Version and Credit -->
+        <div class="credit" id="credit"> Version 1.0 <br> created by <a href="https://github.com/Sprudeel">@Sprudeel</a></div>
+    </div>
+
+    <!-- Content (Game) -->
+    <div class="content">
+
+        <!-- Game Menu -->
+        <div class="menu" id="99">
+            
+            <!-- Choose Mode Title + Explanation -->
+            <div class="choosemode">Modus auswählen <span title="Wähle einen Modus aus der Liste aus! &#013; 1. Endless - Zufällige Fragen und endlos! &#013; 2. Speed - 1 Minute Zeit um möglichst viel zulösen! &#013; 3. Learn - Alle Fragen einmal! &#013; 4. Karte - Lerne wie  mit Karteikarten!"class="material-icons md-small png">help_outline</span></div>
+
+            <!-- Container of Mode Buttons for Grid -->
+            <div class="container-mode">
+
+                <!-- Endless Mode Button -->
+                <button id="101" class="mode" onclick="setMode('endless', '101')">Endless</button>
+             
+                <!-- Speed Mode Button -->
+                <button id="102" class="mode"onclick="setMode('speed', '102')">Speed</button>
+            
+                <!-- Learn Mode Button -->
+                <button id="103" class="mode"onclick="setMode('learn', '103')">Learn</button>
+            
+                <!-- Karteikarten Mode Button -->
+                <button id="104" class="mode"onclick="setMode('kartei', '104')">Kartei</button>
+            </div>    
+
+
+            <!-- Choose Thema + Explanation -->
+            <div class="choosemode">Thema auswählen <span title="Wähle was genau du lernen möchtest (selbst erklärend)" class="material-icons md-small png">help_outline</span></div>
+
+            <!-- Buttons for Choosing the Thema -->
+            <button id="201" class="choose" onclick="setSubject('staaten', '201')">Staaten</button>
+            <br>
+            <button id="202" class="choose" onclick="setSubject('staedte', '202')">Städte</button>
+            <br>
+            <button id="203" class="choose" onclick="setSubject('meere', '203')">Meere</button>
+            <br>
+            <button id="204" class="choose" onclick="setSubject('inseln', '204')">Inseln</button>
+            <br>
+            <button id="205" class="choose" onclick="setSubject('fluesse', '205')">Flüsse</button>
+            <br>
+            <button id="206" class="choose" onclick="setSubject('berge', '206')">Berge, Gebirge</button>
+            <br>
+            <button id="207" class="choose" onclick="setSubject('special', '207')">Spezielle Gebiete</button>
+            <br>
+
+            <!-- Close Menu Button -->
+            <button id="300" class="close" onclick="hideMenu()"><span class="material-icons md-18 png">chevron_left</span>Menu schliessen</button>  
+            
+            
+        </div>  
+
+        <!-- Game => Picture and Input -->
+        <div class="game" id="69">
+
+            <!-- Image -->
+            <div class="image">
+                <img id="1000" src="images/Asien_Naturraum_Normal.png" alt="">
+            </div>
+
+            <!-- Input, Check Solution and Show Solution -->
+            <div id="check" class="input">
+                <input type="" placeholder="Lösung?" id="420"> <button class="submit" id="421" onclick="checkSolution()">Check</button>
+                <br> <div id="222"><button class="submit" onclick="showSolution()">Lösung Anzeigen</button></div>
+            </div>
+
+
+            <!-- Buttons for Karteikarten Mode! -->
+            <div id="kartei">
+                <button id="2001" onclick="evalKartei('again')" class="submit kart">Nochmals</button><button id="2002" onclick="evalKartei('learned')" class="submit kart">Kann Ich!</button>
+            </div>
+        </div>
+
+        <!-- Info Panel on Right -->
+        <div class="info" id="800">
+
+            <!-- Show Correct Panel -->
+            <div class="info1">
+
+                <!-- Title -->
+                <div class="subtitle">
+
+                    <h3>
+                        <span class="subtitle" id="333">Korrekt gelöst</span>
+                    </h3>
+
+                </div>
+                <!-- Container for Correctly Solved -->
+                <div class="correct-container" id="500">
+
+                    <!-- Correct Solved! -->
+                    <p id="3002" style="color: red; text-align: center;">keine</p>
+                    <p id=3001></p>
+
+                </div>
+            </div>  
+
+            <!-- Container of Timer/Stopwatch -->
+            <div class="info2">
+
+                <!-- Title -->
+                <div class="subtitle">
+                    <h3>
+                        <span class="subtitle">Stoppuhr</span>
+                    </h3>
+                </div>
+
+                <!-- Stopwatch / Timer -->
+                <div class="currenttime" id="690">00:00:00</div>
+
+                <!-- Buttons for Controlling Timer / Stopwatch -->
+                <div class="timebtn">
+                    <button id="555" class="close pad" onclick="startTimer()">Start / Pause</button> 
+                    <button id="556" class="close pad" onclick="resetTimer()">Reset</button>
+                </div>
+            </div>
+
+            <!-- Container for Date and Time -->
+            <div class="info3">
+
+                <!-- Title -->
+                <div class="subtitle">
+
+                    <h3>
+                        <span class="subtitle">Datum und Zeit</span>
+                    </h3>
+
+                </div>
+
+                <!-- The Time and date -->
+                <div class="time" id="timer"></div>
+
+                
+            </div>
+
+            <div class="info4">
+                <br>
+                <!-- Title -->
+                <div class="subtitle">
+
+                    <h3>
+                        <span class="subtitle">Einstellungen</span>
+                    </h3>
+
+                </div>
+            <div class="toggle-container" style="position: relative">
+                <!-- Rounded switch -->
+                <label class="toggle" for="myToggle" id="701">
+                    <input class="toggle__input" name="" type="checkbox" id="myToggle">
+                    <div class="toggle__fill"></div>
+                </label>
+                <label for="701" class="switchlabel">nettes Korrigieren <span title="Wenn aktiviert, werden bei der Überprüfung Ihrer Lösung jegliche Sonderzeichen, wie z.B. è, ã oder ô, ignoriert! Info: Der Bindestrich - gehört nicht zu diesen Sonderzeichen!" class="material-icons png">help_outline</span></label>
+            </div>
+            <!-- Close Menu Button -->
+            <button id="301" class="close" style="float: bottom;" onclick="hideInfo()">Info schliessen<span class="material-icons md-18 png">chevron_right</span></button>
+            </div>
+            
+        </div>  
+    </div>
+
+    <!-- Open Menu Container -->
+    <div id="900">
+
+        <!-- Open Menu Button -->
+        <button class="expand" onclick="expandMenu()">
+            <span class="material-icons md-18 png">chevron_right</span>
+        </button>
+    </div>
+
+    <!-- Open Info Container -->
+    <div id="901">
+
+        <!-- Open Info Button -->
+        <button class="expand2" onclick="expandInfo()">
+            <span class="material-icons md-18 png">chevron_left</span>
+        </button>
+    </div>
+
+    <!-- Overlay for different Things! -->
+    <div id="overlay">
+    </div>
+</body>
+
+
+
+
+<!-- Confetti.JS -->
+<script src="index.min.js"></script>
+
+<!-- Local JavaScript File! -->
+<script src="source.js"></script>
+</html>
