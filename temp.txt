@@ -1,17 +1,14 @@
-Apenninen-Halbinsel
-Bretagne
-Island
-Kreta
-Nordkap
-Sizilien
-Balearen
-Iberische Halbinsel
-JuetlandKrim
-Peloponnes
-Skandinavische Halbinsel
-Balkan-Halbinsel
-Irland
-Korsika
-Malta
-Sardinien
-Zypern
+Alpen
+Balkan
+Elbrus
+Kaukasus
+Pyrenaeen
+Sierra Nevada
+Ural
+Apennin
+Dinarische Alpen
+Karpaten
+Mont Blanc
+Rhodopen
+Skandinavisches Gebirge
+Zentralmassiv

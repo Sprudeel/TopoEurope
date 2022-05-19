@@ -63,7 +63,7 @@ const answers = {
     inseln: ["Apenninen-Halbinsel", "Bretagne", "Island", "Kreta", "Nordkap", "Sizilien", "Balearen", "Iberische Halbinsel", "Jütland", "Krim", "Peloponnes", "Skandinavische Halbinsel", "Balkan-Halbinsel", "Irland", "Korsika", "Malta", "Sardinien", "Zypern"],
 
     // Answers for Berge
-    berge: [""],
+    berge: ["Alpen", "Balkan", "Elbrus", "Kaukasus", "Pyrenäen", "Sierra Nevada", "Ural", "Apennin", "Dinarische Alpen", "Karpaten", "Mont Blanc", "Rhodopen", "Skandinavisches Gebirge", "Zentralmassiv"],
 
     // Answers for Flüsse
     fluesse: [""],
