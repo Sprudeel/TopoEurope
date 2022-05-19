@@ -1,11 +1,11 @@
-# ✨ Topo Learner Asua ✨
+# ✨ Topo Learner Europe ✨
 
-Welcome to this Repository containing the Code of the Topo Learner Asia
+Welcome to this Repository containing the Code of the Topo Learner Europe
 
-Play here: [TopoAsia](https://lchsd.ch/projects/topo_asia/)
+Play here: not yet :(
 
 ## 📙 About this Project
-This Project is being created to help people learn the Topography of Africa!
+This Project is being created to help people learn the Topography of Europe!
 
 
 ## 🔧 Built With 
