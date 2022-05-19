@@ -273,10 +273,10 @@ h3 span {
     max-height: 6%;
     scroll-behavior: smooth;
     text-align: left;
-    padding-left: 1vw;
     color: rgb(132, 197, 35);
     max-height: 20vh;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 /* Correctly Solved */

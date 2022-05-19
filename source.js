@@ -51,25 +51,25 @@ var firstTry = true;
 const answers = {
 
     // Answers for Städte
-    staedte: ["!Delhi$New Delhi", "!Dhaka$Dacca", "!Erewan$Jerewan", "!Guangzhou$Kanton", "!Ho-Chi-Minh-Stadt$Saigon", "!Mumbai$Bombay", "!Peking$Beijing", "!Tiflis$Tbilissi", "!Tokio$Tokyo", "!Yangon$Rangun", "Abu Dhabi", "Amman", "Ankara", "Bagdad", "Baku", "Bandung", "Bangkok", "Beirut", "Calcutta", "Chengdu", "Chongqing", "Colombo", "Damaskus", "Hanoi", "Hong Kong", "Irkutsk", "Islamabad", "Istanbul", "Jakarta", "Jerusalem", "Kabul", "Karatschi", "Kathmandu", "Kuala Lumpur", "Kuwait", "Madras", "Manila", "Medan", "Moskau", "Nowosibirsk", "Phnom Penh", "Pjöngjang", "Riad", "Schanghai", "Seoul", "Singapur", "Surabaya", "Taipeh", "Teheran", "Ulan Bator", "Wladiwostok", "Wuhan"],
+    staedte: [""],
 
     // Answers for Staaten
-    staaten: ["Afghanistan", "Armenien", "Aserbaidschan", "Bangladesch", "Bhutan", "Taiwan", "China", "Georgien", "Indien", "Indonesien", "Irak", "Iran", "Israel", "Japan", "Jemen", "Jordanien", "Kambodscha", "Kasachstan", "Kirgistan", "Nordkorea", "Kuwait", "Südkorea", "Laos", "Libanon", "Malaysia", "Malediven", "Mongolei", "!Myanmar$Burma", "Nepal", "Oman", "Pakistan", "Philippinen", "Russland", "Saudi-Arabien", "Singapur", "Sri Lanka", "Syrien", "Tadschikistan", "Thailand", "Türkei", "Turkmenistan", "Usbekistan", "VA Emirate", "Vietnam"],
+    staaten: [""],
 
     // Answers for Meere
-    meere: ["Arabisches Meer", "Beringmeer", "Gelbes Meer", "Golf von Aden", "Golf von Bengalen", "!Indischer Ozean$Indik", "Japanisches Meer", "Kaspisches Meer", "Kuro-Schio", "Malakkastrasse", "Nordpolarmeer", "Ostchinesisches Meer", "!Pazifischer Ozean$Pazifik", "Persischer Golf", "Rotes Meer", "Schwarzes Meer", "Südchinesisches Meer"],
+    meere: ["!Aegaeisches Meer$Aegaeis", "Bosporus", "Kattegat", "Schwarzes Meer", "!Atlantischer Ozean$Atlantik", "Bottnischer Meerbusen", "Ligurisches Meer", "Skagerrak", "!Der Kanal$Ärmelkanal", "Dardanellen", "Marmarameer", "Strasse von Dover", "!Nordatlantischer Strom$Golfstrom", "Finnischer Meerbusen", "Mittelmeer", "Strasse von Gibraltar", "Adriatisches Meer", "Golf von Biscaya", "Nördliches Eismeer", "Tyrrhenisches Meer", "Asowsches Meer", "Ionisches Meer", "Nordsee", "Weisses Meer", "Barentssee", "Irische See", "Ostsee"],
 
     // Answers for Islands
-    inseln: ["!Borneo$Kalimantan", "!Sulawesie$Celebes", "!Honshu$Hondo", "Java", "Kamtschatka", "Korea-Halbinsel", "Luzon", "Malakka-Halbinsel", "Malediven", "Mindanao", "Sachalin", "Sinai", "!Sri Lanka$Ceylon", "Sumatra", "!Taiwan$Formosa"],
+    inseln: ["Apenninen-Halbinsel", "Bretagne", "Island", "Kreta", "Nordkap", "Sizilien", "Balearen", "Iberische Halbinsel", "Jütland", "Krim", "Peloponnes", "Skandinavische Halbinsel", "Balkan-Halbinsel", "Irland", "Korsika", "Malta", "Sardinien", "Zypern"],
 
     // Answers for Berge
-    berge: ["Himalaya", "Hindukusch", "Kaukasus", "Mount Everest", "Pamir", "Taurus", "Ural", "West-Ghats"],
+    berge: [""],
 
     // Answers for Flüsse
-    fluesse: ["Amur", "Aralsee", "Baikalsee", "Balchaschsee", "Brahmaputra", "Euphrat", "Ganges", "!Huang He$Gelber Fluss", "Indus", "Irtysch", "Jenissej", "Lena", "Mekong", "Ob", "Tigris", "Ural", "!Jangtsekiang$Yangtse"],
+    fluesse: [""],
 
     // Answers for Special Places
-    special: ["Arabien", "Hochland von Anatolien", "Hochland von Dekkan", "Hochland von Iran", "Hochland von Tibet", "Indochina", "Kasachensteppe", "Mandschurei", "Mesopotamien", "Vorderindien", "Westsibirisches Tiefland", "Wüste Gobi", "Wüste Thar"]
+    special: [""]
 };
 
 
@@ -580,7 +580,7 @@ function checkSolution() {
 
                 // Show Correct Answer on Correct Answer Board
                 if(mode != "learn") {
-                    showCorrect(currentAnswer);
+                    showCorrect(newarrayAnswers[1]);
                 }
 
                 // Update Correct Var
@@ -596,7 +596,7 @@ function checkSolution() {
                 // Delete Last Question while in Learm mode
                 if(firstTry == true && mode !== "endless" && mode !== "speed") {
                     arrayAnswers.splice((randomNumber - 1), 1);
-                    showCorrect(currentAnswer);
+                    showCorrect(newarrayAnswers[1]);
                     correct++;
                 }
                 return;
@@ -676,8 +676,8 @@ function evalKartei(input) {
         }, 500); 
     } else if (input === "learned") {
         // Show Correct Answer on Correct Answer Board
-        showCorrect(currentAnswer);
-
+        let newArray = multiSolution(currentAnswer);
+        showCorrect(newArray);
         // Update Correct Var
         correct++;
 
